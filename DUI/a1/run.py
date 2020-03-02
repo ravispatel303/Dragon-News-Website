@@ -1,6 +1,3 @@
-#Ravi Patel, rp837@drexel.edu
-#CS530: DUI Project
-
 from flask import Flask, render_template, send_file
 import os
 
