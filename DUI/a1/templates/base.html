@@ -1,0 +1,266 @@
+﻿<!--
+Ravi Patel, rp837@drexel.edu
+CS530: DUI Project
+-->
+<html>
+<head>
+    <title>Dragon NEWS - {% block title %}{% endblock %}</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="/course/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+
+    <script src="/course/lib/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/course/lib/popper/popper.min.js"></script>
+    <script src="/course/lib/bootstrap/js/bootstrap.min.js"></script>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="./course/favicon_io/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./course/favicon_io/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./course/favicon_io/favicon-16x16.png">
+	<link rel="manifest" href="./course/favicon_io/site.webmanifest">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+					<nav class="navbar navbar-expand-md navbar-dark">
+                        
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li>
+                                    <a class="nav-link" id='date' >Date</a>
+									<script>
+										var d = new Date();
+										document.getElementById("date").innerHTML = d.toDateString();
+									</script>
+								</li>
+                            </ul>
+                          
+							<ul class="navbar-nav mr-auto">
+							<a class="navbar-brand" href="/"><img src="/course/img/Dragon_yellow.png" style="max-height: 40px;">
+							</a>
+                                <li class="nav-item{% if active == 'Home' %} active{% endif %}">								
+                                    <a style="font-family:Times New Roman;" href="/"><h1 style="color: #FFFFFF;">Dragon News</h1></a>
+                                </li>
+                            </ul>
+							
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+									<!-- weather widget start -->
+									<a target="_blank" href="https://www.booked.net/weather/philadelphia-19888"><img src="https://w.bookcdn.com/weather/picture/23_19888_1_1_3498db_250_2980b9_ffffff_ffffff_1_2071c9_ffffff_0_6.png?scode=124&domid=w209&anc_id=25569"  alt="booked.net"/></a>
+									<!-- weather widget end -->
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+				</div>
+			</div>
+			<div  id="myHeader" style="background: #006298;width:100%;" class="container" >
+				<div class="col-sm">
+                    <nav class="navbar navbar-expand-md navbar-dark" >
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                
+								<li class="nav-item{% if active == 'Home' %} active{% endif %}">
+                                    <a class="nav-link" href="/">Home</a>
+                                </li>
+								
+                                <li class="nav-item{% if active == 'Arts-Entertainment' %} active{% endif %}">
+                                    <a class="nav-link" href="/Arts-Entertainment">Arts & Entertainment</a>
+                                </li>
+
+                                <li class="nav-item{% if active == 'Science-Technology' %} active{% endif %}">
+                                    <a class="nav-link" href="/Science-Technology">Science & Technology</a>
+                                </li>
+
+                                <li class="nav-item{% if active == 'Business-Entrepreneurship' %} active{% endif %}">
+                                    <a class="nav-link" href="/Business-Entrepreneurship">Business & Entrepreneurship</a>
+                                </li>
+								
+                                <li class="nav-item{% if active == 'Campus-Community' %} active{% endif %}">
+                                    <a class="nav-link" href="/Campus-Community">Campus & Community</a>
+                                </li>
+
+                                <li class="nav-item{% if active == 'Society-Culture' %} active{% endif %}">
+                                    <a class="nav-link" href="/Society-Culture">Society & Culture</a>
+                                </li>
+
+                                <li class="nav-item{% if active == 'Sports' %} active{% endif %}">
+                                    <a class="nav-link" href="/Sports">Sports</a>
+                                </li>
+
+                                <li class="nav-item{% if active == 'About-Drexel' %} active{% endif %}">
+                                    <a class="nav-link" href="/about">About Drexel</a>
+                                </li>
+								      
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+		<script>
+		<!--Sticky feature-->
+		window.onscroll = function() {myFunction()};
+
+		var header = document.getElementById("myHeader");
+		var sticky = header.offsetTop;
+
+		function myFunction() {
+			if (window.pageYOffset > sticky) {
+				header.classList.add("fixed-top");
+			} 
+			else {
+				header.classList.remove("fixed-top");
+			}
+		}
+		
+		<!--Text To Speech-->
+		onload = function() {
+
+		if ('speechSynthesis' in window){
+
+			var synth = speechSynthesis;
+			var flag = false;
+ 
+			/* references to the buttons */
+			var playEle = document.querySelector('#play');
+			var pauseEle = document.querySelector('#pause');
+			var stopEle = document.querySelector('#stop');
+ 
+			/* click event handlers for the buttons */
+			playEle.addEventListener('click', onClickPlay);
+			pauseEle.addEventListener('click', onClickPause);
+			stopEle.addEventListener('click', onClickStop);
+ 
+			function onClickPlay() {
+				if(!flag){
+					flag = true;
+					utterance = new SpeechSynthesisUtterance(
+					document.querySelector('article').textContent);
+					utterance.voice = synth.getVoices()[0];
+					utterance.onend = function(){
+						flag = false;
+					};
+					synth.speak(utterance);
+				}
+				if(synth.paused) { /* unpause/resume narration */
+					synth.resume();
+				}
+			}
+    
+			function onClickPause() {
+				if(synth.speaking && !synth.paused){ /* pause narration */
+					synth.pause();
+				}
+			}
+	
+			function onClickStop() {
+				if(synth.speaking){ /* stop narration */
+				/* for safari */
+				flag = false;
+				synth.cancel();
+				}
+			}
+		}
+		else {
+			alert("Sorry Speech to Text not possible");
+		}
+		}
+		
+		<!--Below code will automatically stop the audio when user leaves the audio page site without clicking on stop button.-->
+		onunload = function(){
+			var r = confirm("Sure! On leaving this page audio will stop");
+			if (r == true) {
+			} 
+			else {
+				document.getElementById("stop").click();
+			}
+		}
+		
+		<!--To change the image when click on particular button(play, pause and stop buttons)-->
+		function playchange(){
+			document.getElementById("play").src="/course/img/played.png"
+			document.getElementById("pause").src="/course/img/pause.png"
+			document.getElementById("stop").src="/course/img/stop.png"
+		}
+
+		function pausechange(){
+			document.getElementById("play").src="/course/img/play.png"
+			document.getElementById("pause").src="/course/img/paused.png"
+			document.getElementById("stop").src="/course/img/stop.png"
+		}
+
+		function stopchange(){
+			document.getElementById("play").src="/course/img/play.png"
+			document.getElementById("pause").src="/course/img/pause.png"
+			document.getElementById("stop").src="/course/img/stopped.png"
+		}	
+		
+		<!--To change text size-->
+		function increaseFontSize(fontvar) {
+			var x = document.getElementById("myDIV");
+			var y = x.getElementsByTagName("*");
+			var i;
+			for (i = 0; i < y.length; i++) {
+				var currentFont = y[i].style.fontSize.replace("px", "");
+				y[i].style.fontSize = parseInt(currentFont) + parseInt(fontvar) + "px";
+			}
+		}
+
+		function decreaseFontSize(fontvar) {
+			var x = document.getElementById("myDIV");
+			var y = x.getElementsByTagName("*");
+			var i;
+			for (i = 0; i < y.length; i++) {
+				var currentFont = y[i].style.fontSize.replace("px", "");
+				y[i].style.fontSize = parseInt(currentFont) - parseInt(fontvar) + "px";
+			}
+		}
+  
+		function normalFontSize(fontvar) {
+			var x = document.getElementById("myDIV");
+			var y = x.getElementsByTagName("*");
+			var i;
+			for (i = 0; i < y.length; i++) {
+				var currentFont = y[i].style.fontSize.replace("px", "");
+				y[i].style.fontSize = "20px";
+			}
+		}
+		</script>
+	</header>
+
+	<main>
+		<div class="container content">
+			{% block content %}{% endblock %}
+		</div>
+	</main>
+</body>
+
+<footer style="background: #006298;">
+	<div class="container">
+        <div class="row">
+            <div class="col-sm">
+				<div align="left" style= "color:#ffc600;">
+					<input align="right" type="image" src="/course/img/acw.jpg" alt="drexel image" style="max-height: 150px;">
+					<br>
+					<h4>Created By:</h4>
+					<h5 style= "padding-left: 5rem;">Ravi Patel</h5>
+					<h5 style= "padding-left: 5rem;">rp837@drexel.edu</h5>
+					<a href="helpful" style="color: #ffc600;"><h6>Helpful Links</h6></a>
+					<h6>Drexel University, 3141 Chestnut Street, Philadelphia, PA 19104, 215.895.2000, © 2019, All Rights Reserved</h6>							
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+</html>

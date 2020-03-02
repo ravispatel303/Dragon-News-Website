@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% set active = "Home" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<!--
+Ravi Patel, rp837@drexel.edu
+CS530: DUI Project
+-->
+
+<style style="text/css">
+
+	/* Define the hover highlight color */
+    .hv:hover {
+          background-color: #f7cf45;
+    }
+	.hv #atxt{
+		color: #006298;
+	}
+	.hv #txt{
+		color: #ffc600;
+	}
+	.hv:hover #txt{
+		color: #006298;
+	}
+	
+</style>
+	
+<section class="jumbotron">
+	<div class="container-fluid">
+		<div class="row">
+			<article class="col-lg-4 col-md-4 col-sm-4 hv">
+				<figure>
+					<a href="/Arts-Entertainment"><img class="img-fluid"src="/course/img/i1.jpg" alt="Image" style="width:300px ;height: 400px; padding-top: 1.5rem;padding-left: 1.5rem;"></a>
+				</figure>
+				<a id="txt" href="Arts-Entertainment">Arts & Entertainment</a>
+				<h2><a id="atxt" href="Arts-Entertainment">$5 Million Gift to Drexel Will Establish Bentley Hall for Honors Students</a></h2>
+			</article>
+			
+			<article class="col-lg-4 col-md-4 col-sm-4 hv">
+				<figure>
+					<a href="Science-Technology"><img class="img-fluid"src="/course/img/i1.jpg" alt="Image" style="width:300px ;height: 400px; padding-top: 1.5rem;padding-left: 1.5rem;"></a>
+				</figure>
+				<a id="txt" href="Science-Technology">Science & Technology</a>
+				<h2><a id="atxt" href="Science-Technology">$5 Million Gift to Drexel Will Establish Bentley Hall for Honors Students</a></h2>
+			</article>
+			
+			<article class="col-lg-4 col-md-4 col-sm-4 hv">
+				<figure>
+					<a href="Business-Entrepreneurship"><img class="img-fluid"src="/course/img/i1.jpg" alt="Image" style="width:300px ;height: 400px; padding-top: 1.5rem;padding-left: 1.5rem;"></a>
+				</figure>
+				<a id="txt" href="Business-Entrepreneurship">Business & Entrepreneurship</a>
+				<h2><a id="atxt" href="Business-Entrepreneurship">$5 Million Gift to Drexel Will Establish Bentley Hall for Honors Students</a></h2>
+			</article>
+		</div>
+		<p><br></br></p>
+		<div class="row">
+			<article class="col-lg-4 col-md-4 col-sm-4 hv">
+				<figure>
+					<a href="Campus-Community"><img class="img-fluid"src="/course/img/i1.jpg" alt="Image" style="width:300px ;height: 400px; padding-top: 1.5rem;padding-left: 1.5rem;"></a>
+				</figure>
+				<a id="txt" href="Campus-Community">Campus & Community</a>
+				<h2><a id="atxt" href="Campus-Community">$5 Million Gift to Drexel Will Establish Bentley Hall for Honors Students</a></h2>
+			</article>
+			
+			<article class="col-lg-4 col-md-4 col-sm-4 hv">
+				<figure>
+					<a href="Society-Culture"><img class="img-fluid"src="/course/img/i1.jpg" alt="Image" style="width:300px ;height: 400px; padding-top: 1.5rem;padding-left: 1.5rem;"></a>
+				</figure>
+				<a id="txt" href="Society-Culture">Society & Culture</a>
+				<h2><a id="atxt" href="Society-Culture">$5 Million Gift to Drexel Will Establish Bentley Hall for Honors Students</a></h2>
+			</article>
+			
+			<article class="col-lg-4 col-md-4 col-sm-4 hv">
+				<figure>
+					<a href="Sports"><img class="img-fluid"src="/course/img/i1.jpg" alt="Image" style="width:300px ;height: 400px; padding-top: 1.5rem;padding-left: 1.5rem;"></a>
+				</figure>
+				<a id="txt" href="Sports">Sports</a>
+				<h2><a id="atxt" href="Sports">$5 Million Gift to Drexel Will Establish Bentley Hall for Honors Students</a></h2>
+			</article>
+		</div>
+	</div>
+</section>
+{% endblock %}

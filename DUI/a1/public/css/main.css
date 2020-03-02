@@ -1,0 +1,48 @@
+/*Ravi Patel, rp837@drexel.edu
+CS530: DUI Assignment[1]*/
+
+/*Here "font-family: 'Avenir'" is not working on my machine so I have added following font-face code so that it will work on any machine*/
+body {
+	font-family:'Avenir Next';
+    font-size: 1rem;
+    background: #fff;
+}
+
+header {
+    background: #006298;
+}
+
+.btn {
+    border-color: #406C39;
+    color: #fff;
+}
+
+.btn:hover {
+    background: #ffc600;
+	border-color: #406C39;
+    color: #fff;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+	color: #ffc600
+}
+
+.content {
+    padding: 2rem 1.5rem;
+}
+
+.jumbotron {
+    padding: 1.5rem;
+    background: 0;
+}
+
+
+/*.jumbotron img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*set is used in bikes.html and in rent.html
+unavailable is used in rent.html*/
+

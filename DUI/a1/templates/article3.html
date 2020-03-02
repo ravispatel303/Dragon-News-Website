@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% set active = "Article" %}
+
+{% block title %}
+Article
+{% endblock %}
+
+{% block content %}
+
+<!--
+Ravi Patel, rp837@drexel.edu
+CS530: DUI Project
+-->
+
+<section class="jumbotron">
+	<div class="container-fluid">
+		<div align="center">
+			<input type="image" onclick="playchange()" id=play src="/course/img/play.png" title="Click Me to Play" alt="play button" style="max-height: 50px;">
+			<input type="image" onclick="pausechange()" id=pause src="/course/img/pause.png" title="Click Me to Pause" alt="pause button"style="max-height: 50px;">
+			<input type="image" onclick="stopchange()" id=stop src="/course/img/stop.png" title="Click Me to Stop" alt="stop button" style="max-height: 50px;">
+		</div>
+
+		<figure align="center">
+			<img src="/course/img/i3.jpg" alt="Image" class="img-fluid">
+		</figure>
+			
+		<div>
+			<input type="image" onclick="decreaseFontSize(1)"src="/course/img/a1.png" title="Click Me to Decrease Font Size" alt="A- image" style="float: right; max-height:15px;">
+			<input type="image" onclick="normalFontSize(1)" src="/course/img/a1.png" title="Click Me for Normal Font Size" alt="A image" style="float: right; max-height:20px;">
+			<input type="image" onclick="increaseFontSize(1)" src="/course/img/a1.png" title="Click Me to Increase Font Size" alt="A+ image" style="float: right; max-height:25px;">
+			<h5 style="float: right;">Text Size:</h5>
+		</div>
+
+		<article>		
+			<h2><a href="article3">Getting Real — Drexel Opens Lab to Study Virtual, Augmented and Immersive Reality Technology</a></h2>
+			<div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0">
+				<div class="row" id="myDIV">
+					<div class="col-lg-8">
+						<p style="font-size:20px;">At the convergence of visual arts and computer technology, virtual and augmented reality have grown from a novelty of movies and video games into a tool that’s opening new opportunities for study and exploration. Experts in Drexel University’s Westphal College of Media Arts & Design are creating a new generation of the technology to and with the opening of its Immersive Research Lab, they will be working with students and researchers from around the University to push its application into new spaces.</p>
+
+						<p style="font-size:20px;">“This is the first space on campus dedicated to the study and development of immersive media and virtual and augmented reality,” said <b>Nick Jushchyshyn</b>, an assistant professor in Westphal College and director of the lab. “With a concentration of the latest AR/VR technologies and creative minds from around campus, we see this as a resource that will expose all Drexel students to the latest visualization technology, while the next generation is being created by students in the lab.”</p>
+
+						<p style="font-size:20px;">The 550-square-foot, glass-enclosed lab, which is centrally located in Westphal’s URBN Center will feature the latest computer technology, including HP-ZVR Backpack Workstations, as well as cutting-edge virtual and augmented reality devices from Oculus Go, HTC VIVE and Microsoft HoloLens headsets to Leap Motion hand-tracking and iClone Facial motion capture systems, as well as a full motion capture studio equipped with OptiTrak and Vicon motion capture devices.</p>
+					</div>
+						
+					<div class="col-lg-4">
+						<h4 style="font-size:20px;"><u>Highlight</u></h4>
+						<p style="font-size:20px;">“This is the first space on campus dedicated to the study and development of immersive media and virtual and augmented reality,” said <b>Nick Jushchyshyn</b></p>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+</section>
+
+{% endblock %}

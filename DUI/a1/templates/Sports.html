@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% set active = "Sports" %}
+
+{% block title %}
+Sports
+{% endblock %}
+
+{% block content %}
+
+<!--
+Ravi Patel, rp837@drexel.edu
+CS530: DUI Project
+-->
+
+<style style="text/css">
+	/* Define the hover highlight color for the table row */
+    .hoverTable tr:hover {
+          background-color: #f7cf45;
+    }
+</style>
+
+<section class="jumbotron">
+<h1 class="jumbotron-heading">Sports</h1>  
+	<div class="table-responsive">
+		<table  id="tableID" class="table hoverTable">
+			<tbody>
+			<tr>
+				<td>
+					<img class="img-fluid" src="/course/img/i1.jpg">
+				</td>
+				<td>
+					<h2><a href="article1">$5 Million Gift to Drexel Will Establish Bentley Hall for Honors Students</a></h2>
+					<p style="font-size:20px;">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large <a href="article1">see more<a>
+					</p>
+				</td>
+			</tr>	
+			<tr>
+				<td>
+					<img class="img-fluid" src="/course/img/i2.jpg">
+				</td>
+				<td>
+					<h2><a href="article2">Did an Asteroid Cancel Dinosaurs? The Truth is in the Lava</a></h2>
+					<p style="font-size:20px;">About sixty-six million years ago a planet-wide catastrophe brought the non-avian dinosaurs to their demise, and the end of the Cretaceous period was marked by a mass extinction of its fauna and flora. <a href="article2">see more<a>
+					</p>
+				</td>
+			</tr>		
+			<tr>
+				<td>
+					<img class="img-fluid" src="/course/img/i3.jpg">
+				</td>
+				<td>
+					<h2><a href="article3">Getting Real — Drexel Opens Lab to Study Virtual, Augmented and Immersive Reality Technology</a></h2>
+					<p style="font-size:20px;">At the convergence of visual arts and computer technology, virtual and augmented reality have grown from a novelty of movies and video games into a tool that’s opening new opportunities for study and exploration.<a href="article3">see more<a>
+					</p>
+				</td>
+			</tr>		
+			</tbody>
+		</table>
+	</div>
+</section>
+
+{% endblock %}

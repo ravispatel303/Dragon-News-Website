@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% set active = "Article" %}
+
+{% block title %}
+Article
+{% endblock %}
+
+{% block content %}
+
+<!--
+Ravi Patel, rp837@drexel.edu
+CS530: DUI Project
+-->
+
+<section class="jumbotron">
+	<div class="container-fluid">
+		<div align="center">
+			<input type="image" onclick="playchange()" id=play src="/course/img/play.png" title="Click Me to Play" alt="play button" style="max-height: 50px;">
+			<input type="image" onclick="pausechange()" id=pause src="/course/img/pause.png" title="Click Me to Pause" alt="pause button"style="max-height: 50px;">
+			<input type="image" onclick="stopchange()" id=stop src="/course/img/stop.png" title="Click Me to Stop" alt="stop button" style="max-height: 50px;">
+		</div>
+
+		<figure align="center">
+			<img src="/course/img/i2.jpg" alt="Image" class="img-fluid">
+		</figure>
+			
+		<div>
+			<input type="image" onclick="decreaseFontSize(1)"src="/course/img/a1.png" title="Click Me to Decrease Font Size" alt="A- image" style="float: right; max-height:15px;">
+			<input type="image" onclick="normalFontSize(1)" src="/course/img/a1.png" title="Click Me for Normal Font Size" alt="A image" style="float: right; max-height:20px;">
+			<input type="image" onclick="increaseFontSize(1)" src="/course/img/a1.png" title="Click Me to Increase Font Size" alt="A+ image" style="float: right; max-height:25px;">
+			<h5 style="float: right;">Text Size:</h5>
+		</div>
+		
+		<article>
+			<h2><a href="article2">Did an Asteroid Cancel Dinosaurs? The Truth is in the Lava</a></h2>
+			<div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0">
+				<div class="row" id="myDIV">
+					<div class="col-lg-8">
+						<p style="font-size:20px;">About sixty-six million years ago a planet-wide catastrophe brought the non-avian dinosaurs to their demise, and the end of the Cretaceous period was marked by a mass extinction of its fauna and flora. New data, published in the journal Science, says it’s possible that intense volcanic eruptions in India coincided with the worldwide extinction – ultimately cementing the fate of the massive reptiles.</p>
+
+						<p style="font-size:20px;">“Our previous research presented the hypothesis that a large asteroid impact off the coast of Yucatan could have shaken the Earth globally, which could have disrupted the magmatic systems of volcanoes across the world, causing this transition,” said <b>Loÿc Vanderkluysen, PhD,</b> volcanologist and professor of geoscience in the College of Arts and Sciences at Drexel. However, this hypothesis remained very much untested and controversial, until now.</p>
+
+						<p style="font-size:20px;">Vanderkluysen was among the group of researchers, primarily from the University of California, Berkeley, that dated the vast lava flows known as the Deccan Traps in India using radiation measurements. The team was able to date massive lava flows with far greater precision, whittling it down from around a million years to a period of tens of thousands of years.</p>
+					</div>
+						
+					<div class="col-lg-4">
+						<h4 style="font-size:20px;"><u>Highlight</u></h4>
+						<p style="font-size:20px;">“Our previous research presented the hypothesis that a large asteroid impact off the coast of Yucatan could have shaken the Earth globally, which could have disrupted the magmatic systems of volcanoes across the world, causing this transition,” said <b>Loÿc Vanderkluysen, PhD,</b></p>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+</section>
+
+{% endblock %}

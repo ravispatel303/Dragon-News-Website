@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% set active = "About-Drexel" %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block content %}
+
+<!--
+Ravi Patel, rp837@drexel.edu
+CS530: DUI Project
+-->
+
+<section class="jumbotron">
+	<div class="container-fluid">
+		<div align="center">
+			<input type="image" onclick="playchange()" id=play src="/course/img/play.png" title="Click Me to Play" alt="play button" style="max-height: 50px;">
+			<input type="image" onclick="pausechange()" id=pause src="/course/img/pause.png" title="Click Me to Pause" alt="pause button"style="max-height: 50px;">
+			<input type="image" onclick="stopchange()" id=stop src="/course/img/stop.png" title="Click Me to Stop" alt="stop button" style="max-height: 50px;">
+		</div>
+
+		<figure align="center">
+			<img src="/course/img/dragon.jpg" alt="Image" class="img-fluid">
+		</figure>
+			
+		<div>
+			<input type="image" onclick="decreaseFontSize(1)"src="/course/img/a1.png" title="Click Me to Decrease Font Size" alt="A- image" style="float: right; max-height:15px;">
+			<input type="image" onclick="normalFontSize(1)" src="/course/img/a1.png" title="Click Me for Normal Font Size" alt="A image" style="float: right; max-height:20px;">
+			<input type="image" onclick="increaseFontSize(1)" src="/course/img/a1.png" title="Click Me to Increase Font Size" alt="A+ image" style="float: right; max-height:25px;">
+			<h5 style="float: right;">Text Size:</h5>
+		</div>
+
+		<article>		
+			<h2><a href="https://drexel.edu/">About Drexel University</a></h2>
+			<div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0">
+				<div class="row" id="myDIV">
+					<div class="col-lg-8">
+						<p style="font-size:20px;"><a href="https://drexel.edu/"><b>Drexel University</b></a> is a private research university with its main campus located in the University City neighborhood of Philadelphia, Pennsylvania, United States. It was founded in 1891 by Anthony J. Drexel, a noted financier and philanthropist. Founded as Drexel Institute of Art, Science, and Industry; it was renamed Drexel Institute of Technology in 1936, before assuming the name Drexel University in 1970.</p>
+
+						<p style="font-size:20px;">As of 2015, more than 26,000 students are enrolled in over 70 undergraduate programs and more than 100 master's, doctoral, and professional programs at the university.[2] Drexel's cooperative education program (co-op) is a unique aspect of the school's degree programs, offering students the opportunity to gain up to 18 months of paid, full-time work experience in a field relevant to their undergraduate major or graduate degree program prior to graduation.</p>
+					</div>			
+				</div>
+			</div>
+		</article>
+	</div>
+</section>
+
+{% endblock %}
