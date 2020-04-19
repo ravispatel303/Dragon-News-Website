@@ -2,10 +2,7 @@
 
 go to DUI/a1 path on command prompt and do following steps on command prompt
 
->>set FLASK_APP=run.py
-
->>set FLASK_ENV=development
-
+>>pip install -r requirements.txt
 >>flask run
 
 
