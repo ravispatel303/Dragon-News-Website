@@ -14,7 +14,7 @@ def index():
 # Handle any files that begin "/course" by loading from the course directory
 @app.route('/course/<path:path>')
 def base_static(path):
-    return send_file(os.path.join(app.root_path, '..', 'course', path))
+    return send_file(os.path.join(app.root_path, '.', 'course', path))
 
 
 # Handle any unhandled filename by loading its template
@@ -24,4 +24,4 @@ def generic(name):
 
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=8102, debug=True)
+    app.run()
