@@ -1,6 +1,6 @@
 # Dragon-News-Website
 
-go to DUI/a1 path on command prompt and do following steps on command prompt
+go to path on command prompt and do following steps on command prompt
 
 >>pip install -r requirements.txt
 
